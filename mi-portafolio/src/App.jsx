@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import miFoto from './assets/yo.jpg'; // Asegúrate de que la ruta sea correcta
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,8 @@ function App() {
       const scrollPosition = window.scrollY;
       setScrolled(scrollPosition > 50);
 
-      const sections = ['home', 'portafolio', 'acerca', 'contacto', 'curriculum'];
+      const sections = ['home', 'portafolio', 'acerca',  'habilidades',
+        'testimonios','contacto', 'curriculum',];
       const scrollPos = scrollPosition + 60;
 
       for (const section of sections) {
@@ -97,7 +99,9 @@ function App() {
               { id: 'home', label: 'Inicio' },
               { id: 'portafolio', label: 'Portafolio' },
               { id: 'acerca', label: 'Sobre mí' },
-              { id: 'contacto', label: 'Contacto' },
+               { id: 'habilidades', label: 'Habilidades' },
+              { id: 'testimonios', label: 'Testimonios' },
+               { id: 'contacto', label: 'Contacto' },
               { id: 'curriculum', label: 'CV' }
             ].map(item => (
               <button
@@ -201,123 +205,197 @@ function App() {
         overflow: 'hidden'
       }}>
         {/* Animated background elements */}
-        <div style={{
-          position: 'absolute',
-          top: '10%',
-          left: '10%',
-          width: 100,
-          height: 100,
-          background: 'rgba(255,255,255,0.1)',
-          borderRadius: '50%',
-          animation: 'float 6s ease-in-out infinite'
-        }}></div>
-        <div style={{
-          position: 'absolute',
-          top: '60%',
-          right: '15%',
-          width: 150,
-          height: 150,
-          background: 'rgba(255,255,255,0.05)',
-          borderRadius: '50%',
-          animation: 'float 8s ease-in-out infinite reverse'
-        }}></div>
+<div style={{
+  position: 'absolute',
+  top: '10%',
+  left: '10%',
+  width: 100,
+  height: 100,
+  background: 'rgba(255,255,255,0.1)',
+  borderRadius: '50%',
+  animation: 'float 6s ease-in-out infinite'
+}}></div>
+<div style={{
+  position: 'absolute',
+  top: '60%',
+  right: '15%',
+  width: 150,
+  height: 150,
+  background: 'rgba(255,255,255,0.05)',
+  borderRadius: '50%',
+  animation: 'float 8s ease-in-out infinite reverse'
+}}></div>
 
-        <div style={{ zIndex: 2 }}>
-          <h1 style={{
-            fontSize: 56,
-            fontWeight: 900,
-            marginBottom: 15,
-            textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
-          }}>
-            Hola, soy Niurka
-          </h1>
-          <h2 style={{
-            fontSize: 28,
-            fontWeight: 300,
-            marginBottom: 20,
-            opacity: 0.9
-          }}>
-            Frontend Developer & AI Enthusiast
-          </h2>
-          <p style={{
-            fontSize: 20,
-            maxWidth: 500,
-            margin: '0 auto 30px',
-            opacity: 0.8,
-            lineHeight: 1.6
-          }}>
-            Desarrolladora especializada en crear experiencias digitales innovadoras y soluciones de inteligencia artificial.
-          </p>
-          <div style={{ display: 'flex', gap: 15, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => scrollToSection('portafolio')}
-              style={{
-                background: 'rgba(255,255,255,0.2)',
-                color: '#fff',
-                border: '2px solid rgba(255,255,255,0.3)',
-                borderRadius: 30,
-                padding: '15px 30px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                fontSize: 16,
-                transition: 'all 0.3s ease',
-                backdropFilter: 'blur(10px)'
-              }}
-              onMouseEnter={e => {
-                e.target.style.background = 'rgba(255,255,255,0.3)';
-                e.target.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                e.target.style.background = 'rgba(255,255,255,0.2)';
-                e.target.style.transform = 'translateY(0)';
-              }}
-            >
-              Ver mis proyectos
-            </button>
-            <button
-              onClick={() => scrollToSection('contacto')}
-              style={{
-                background: '#fff',
-                color: '#667eea',
-                border: '2px solid #fff',
-                borderRadius: 30,
-                padding: '15px 30px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                fontSize: 16,
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={e => {
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-              }}
-              onMouseLeave={e => {
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = 'none';
-              }}
-            >
-              Hablemos
-            </button>
-          </div>
-        </div>
+<div style={{ zIndex: 2, display: 'flex', alignItems: 'center', gap: '60px', maxWidth: '1200px', margin: '0 auto' }}>
+  {/* Contenedor de la imagen */}
+  <div style={{
+    flexShrink: 0,
+    position: 'relative'
+  }}>
+    <div style={{
+      width: 280,
+      height: 280,
+      borderRadius: '50%',
+      background: 'rgba(255,255,255,0.1)',
+      border: '4px solid rgba(255,255,255,0.2)',
+      backdropFilter: 'blur(10px)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+      boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+      transition: 'all 0.3s ease'
+    }}>
+      {/* Aquí va tu imagen */}
+      <img 
+        src={miFoto} 
+        alt="Niurka - Frontend Developer"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          borderRadius: '50%'
+        }}
+      />
+      {/* Placeholder mientras no tienes la imagen */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(255,255,255,0.1)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 18,
+        color: 'rgba(255,255,255,0.7)',
+        borderRadius: '50%'
+      }}>
+        
+      </div>
+    </div>
+    
+    {/* Elementos decorativos alrededor de la foto */}
+    <div style={{
+      position: 'absolute',
+      top: -10,
+      right: -10,
+      width: 30,
+      height: 30,
+      background: '#fff',
+      borderRadius: '50%',
+      opacity: 0.8,
+      animation: 'pulse 2s infinite'
+    }}></div>
+    <div style={{
+      position: 'absolute',
+      bottom: 20,
+      left: -15,
+      width: 20,
+      height: 20,
+      background: 'rgba(255,255,255,0.6)',
+      borderRadius: '50%',
+      animation: 'pulse 3s infinite'
+    }}></div>
+  </div>
 
-        {/* Scroll indicator */}
-        <div style={{
-          position: 'absolute',
-          bottom: 30,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          animation: 'bounce 2s infinite'
-        }}>
-          <div style={{
-            width: 2,
-            height: 30,
-            background: 'rgba(255,255,255,0.5)',
-            margin: '0 auto 10px',
-            borderRadius: 2
-          }}></div>
-          <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>Scroll</div>
-        </div>
+  {/* Contenido de texto */}
+  <div style={{ flex: 1, textAlign: 'left' }}>
+    <h1 style={{
+      fontSize: 56,
+      fontWeight: 900,
+      marginBottom: 15,
+      textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
+    }}>
+      Hola, soy Niurka
+    </h1>
+    <h2 style={{
+      fontSize: 28,
+      fontWeight: 300,
+      marginBottom: 20,
+      opacity: 0.9
+    }}>
+      Frontend Developer & AI Enthusiast
+    </h2>
+    <p style={{
+      fontSize: 20,
+      maxWidth: 500,
+      marginBottom: 30,
+      opacity: 0.8,
+      lineHeight: 1.6
+    }}>
+      Desarrolladora especializada en crear experiencias digitales innovadoras y soluciones de inteligencia artificial.
+    </p>
+    <div style={{ display: 'flex', gap: 15, flexWrap: 'wrap' }}>
+      <button
+        onClick={() => scrollToSection('portafolio')}
+        style={{
+          background: 'rgba(255,255,255,0.2)',
+          color: '#fff',
+          border: '2px solid rgba(255,255,255,0.3)',
+          borderRadius: 30,
+          padding: '15px 30px',
+          fontWeight: 600,
+          cursor: 'pointer',
+          fontSize: 16,
+          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(10px)'
+        }}
+        onMouseEnter={e => {
+          e.target.style.background = 'rgba(255,255,255,0.3)';
+          e.target.style.transform = 'translateY(-2px)';
+        }}
+        onMouseLeave={e => {
+          e.target.style.background = 'rgba(255,255,255,0.2)';
+          e.target.style.transform = 'translateY(0)';
+        }}
+      >
+        Ver mis proyectos
+      </button>
+      
+      <button
+        onClick={() => scrollToSection('contacto')}
+        style={{
+          background: '#fff',
+          color: '#667eea',
+          border: '2px solid #fff',
+          borderRadius: 30,
+          padding: '15px 30px',
+          fontWeight: 600,
+          cursor: 'pointer',
+          fontSize: 16,
+          transition: 'all 0.3s ease'
+        }}
+        onMouseEnter={e => {
+          e.target.style.transform = 'translateY(-2px)';
+          e.target.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+        }}
+        onMouseLeave={e => {
+          e.target.style.transform = 'translateY(0)';
+          e.target.style.boxShadow = 'none';
+        }}
+      >
+        Hablemos
+      </button>
+    </div>
+  </div>
+</div>
+
+{/* Agregar las animaciones CSS */}
+<style jsx>{`
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.1); }
+  }
+`}</style>
+
+        
 
         <style>
           {`
@@ -629,7 +707,463 @@ function App() {
         </div>
       </section>
 
-      {/* Enhanced CONTACTO */}
+      
+{/* HABILIDADES Y TECNOLOGÍAS */}
+      <section id="habilidades" style={{ padding: '80px 20px', background: '#fff' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{
+            fontSize: 42,
+            fontWeight: 800,
+            marginBottom: 15,
+            background: gradientBg,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Habilidades & Tecnologías
+          </h2>
+          <p style={{ color: '#666', marginBottom: 50, fontSize: 18 }}>
+            Tecnologías y herramientas que domino para crear experiencias excepcionales
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: 30,
+            marginBottom: 50
+          }}>
+            {/* Frontend */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 20,
+              padding: 30,
+              boxShadow: cardShadow,
+              border: '1px solid #f0f0f0',
+              transition: 'all 0.3s ease'
+            }}>
+              <div style={{
+                width: 70,
+                height: 70,
+                background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                borderRadius: '50%',
+                margin: '0 auto 20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 30
+              }}>
+                💻
+              </div>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#333' }}>
+                Frontend Development
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+                {['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Sass', 'Tailwind CSS', 'Bootstrap'].map(tech => (
+                  <span key={tech} style={{
+                    background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+                    color: '#667eea',
+                    padding: '8px 16px',
+                    borderRadius: 20,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    border: '1px solid rgba(102, 126, 234, 0.2)',
+                    transition: 'all 0.3s ease'
+                  }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* AI & Data Science */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 20,
+              padding: 30,
+              boxShadow: cardShadow,
+              border: '1px solid #f0f0f0',
+              transition: 'all 0.3s ease'
+            }}>
+              <div style={{
+                width: 70,
+                height: 70,
+                background: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                borderRadius: '50%',
+                margin: '0 auto 20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 30
+              }}>
+                🤖
+              </div>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#333' }}>
+                IA & Data Science
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+                {['Python', 'TensorFlow', 'PyTorch', 'Pandas', 'NumPy', 'Scikit-learn', 'Jupyter', 'Machine Learning'].map(tech => (
+                  <span key={tech} style={{
+                    background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1))',
+                    color: '#a855f7',
+                    padding: '8px 16px',
+                    borderRadius: 20,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    border: '1px solid rgba(168, 85, 247, 0.2)',
+                    transition: 'all 0.3s ease'
+                  }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Tools & Others */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 20,
+              padding: 30,
+              boxShadow: cardShadow,
+              border: '1px solid #f0f0f0',
+              transition: 'all 0.3s ease'
+            }}>
+              <div style={{
+                width: 70,
+                height: 70,
+                background: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+                borderRadius: '50%',
+                margin: '0 auto 20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 30
+              }}>
+                🛠️
+              </div>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#333' }}>
+                Herramientas & Otros
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+                {['Git', 'GitHub', 'VS Code', 'Figma', 'Node.js', 'SQL', 'MongoDB', 'Agile/Scrum'].map(tech => (
+                  <span key={tech} style={{
+                    background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1))',
+                    color: '#06b6d4',
+                    padding: '8px 16px',
+                    borderRadius: 20,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    border: '1px solid rgba(6, 182, 212, 0.2)',
+                    transition: 'all 0.3s ease'
+                  }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Skills Progress */}
+          <div style={{
+            background: '#f8fafc',
+            borderRadius: 20,
+            padding: 40,
+            boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
+          }}>
+            <h3 style={{ fontSize: 24, fontWeight: 700, marginBottom: 30, color: '#333' }}>
+              Nivel de Competencia
+            </h3>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: 25
+            }}>
+              {[
+                { skill: 'React & JavaScript', level: 90, color: '#667eea' },
+                { skill: 'Python & IA', level: 85, color: '#a855f7' },
+                { skill: 'UX/UI Design', level: 80, color: '#06b6d4' },
+                { skill: 'Problem Solving', level: 95, color: '#10b981' }
+              ].map(item => (
+                <div key={item.skill} style={{ textAlign: 'left' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <span style={{ fontWeight: 600, color: '#333' }}>{item.skill}</span>
+                    <span style={{ color: item.color, fontWeight: 700 }}>{item.level}%</span>
+                  </div>
+                  <div style={{
+                    width: '100%',
+                    height: 10,
+                    background: '#e2e8f0',
+                    borderRadius: 5,
+                    overflow: 'hidden'
+                  }}>
+                    <div style={{
+                      width: `${item.level}%`,
+                      height: '100%',
+                      background: `linear-gradient(90deg, ${item.color}, ${item.color}dd)`,
+                      borderRadius: 5,
+                      transition: 'width 1.5s ease-in-out'
+                    }}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIOS */}
+      <section id="testimonios" style={{ padding: '80px 20px', background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{
+            fontSize: 42,
+            fontWeight: 800,
+            marginBottom: 15,
+            background: gradientBg,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Testimonios
+          </h2>
+          <p style={{ color: '#666', marginBottom: 50, fontSize: 18 }}>
+            Lo que dicen colegas y colaboradores sobre mi trabajo
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: 30
+          }}>
+            {/* Testimonio 1 */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 20,
+              padding: 30,
+              boxShadow: '0 15px 35px rgba(0,0,0,0.08)',
+              border: '1px solid #f0f0f0',
+              position: 'relative',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.12)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.08)';
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: -10,
+                left: 30,
+                fontSize: 40,
+                color: '#667eea',
+                opacity: 0.3
+              }}>
+                "
+              </div>
+              <p style={{
+                color: '#555',
+                fontSize: 16,
+                lineHeight: 1.7,
+                marginBottom: 25,
+                fontStyle: 'italic'
+              }}>
+                "Niurka demuestra una capacidad excepcional para resolver problemas complejos. Su enfoque innovador y atención al detalle hacen que cada proyecto sea un éxito. Es una profesional altamente recomendable."
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+                <div style={{
+                  width: 50,
+                  height: 50,
+                  background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 20,
+                  color: '#fff'
+                }}>
+                  👨‍💼
+                </div>
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: 700, color: '#333', fontSize: 16 }}>
+                    Carlos Mendoza
+                  </div>
+                  <div style={{ color: '#667eea', fontSize: 14, fontWeight: 600 }}>
+                    Tech Lead - StartupTech
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonio 2 */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 20,
+              padding: 30,
+              boxShadow: '0 15px 35px rgba(0,0,0,0.08)',
+              border: '1px solid #f0f0f0',
+              position: 'relative',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.12)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.08)';
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: -10,
+                left: 30,
+                fontSize: 40,
+                color: '#a855f7',
+                opacity: 0.3
+              }}>
+                "
+              </div>
+              <p style={{
+                color: '#555',
+                fontSize: 16,
+                lineHeight: 1.7,
+                marginBottom: 25,
+                fontStyle: 'italic'
+              }}>
+                "Trabajar con Niurka fue una experiencia increíble. Su creatividad y habilidades técnicas son impresionantes. Siempre entrega resultados que superan las expectativas del cliente."
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+                <div style={{
+                  width: 50,
+                  height: 50,
+                  background: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 20,
+                  color: '#fff'
+                }}>
+                  👩‍💻
+                </div>
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: 700, color: '#333', fontSize: 16 }}>
+                    María González
+                  </div>
+                  <div style={{ color: '#a855f7', fontSize: 14, fontWeight: 600 }}>
+                    UX Designer - DesignStudio
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonio 3 */}
+            <div style={{
+              background: '#fff',
+              borderRadius: 20,
+              padding: 30,
+              boxShadow: '0 15px 35px rgba(0,0,0,0.08)',
+              border: '1px solid #f0f0f0',
+              position: 'relative',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.12)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.08)';
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: -10,
+                left: 30,
+                fontSize: 40,
+                color: '#06b6d4',
+                opacity: 0.3
+              }}>
+                "
+              </div>
+              <p style={{
+                color: '#555',
+                fontSize: 16,
+                lineHeight: 1.7,
+                marginBottom: 25,
+                fontStyle: 'italic'
+              }}>
+                "La dedicación y profesionalismo de Niurka son ejemplares. Su capacidad para adaptarse a nuevas tecnologías y su enfoque en la calidad hacen que sea una colaboradora excepcional."
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
+                <div style={{
+                  width: 50,
+                  height: 50,
+                  background: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 20,
+                  color: '#fff'
+                }}>
+                  👨‍🏫
+                </div>
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: 700, color: '#333', fontSize: 16 }}>
+                    Dr. Roberto Silva
+                  </div>
+                  <div style={{ color: '#06b6d4', fontSize: 14, fontWeight: 600 }}>
+                    Professor - Universidad Técnica
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to action para testimonios */}
+          <div style={{
+            marginTop: 50,
+            background: '#fff',
+            borderRadius: 20,
+            padding: 40,
+            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+            display: 'inline-block'
+          }}>
+            <h3 style={{ fontSize: 24, fontWeight: 700, color: '#333', marginBottom: 15 }}>
+              ¿Trabajaste conmigo?
+            </h3>
+            <p style={{ color: '#666', marginBottom: 20 }}>
+              Me encantaría incluir tu testimonio
+            </p>
+            <button
+              onClick={() => scrollToSection('contacto')}
+              style={{
+                background: 'transparent',
+                color: '#667eea',
+                border: '2px solid #667eea',
+                borderRadius: 25,
+                padding: '12px 25px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={e => {
+                e.target.style.background = '#667eea';
+                e.target.style.color = '#fff';
+              }}
+              onMouseLeave={e => {
+                e.target.style.background = 'transparent';
+                e.target.style.color = '#667eea';
+              }}
+            >
+              Enviar testimonio
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+{/* Enhanced CONTACTO */}
       <section id="contacto" style={{ padding: '80px 20px', background: '#fff' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{
@@ -733,6 +1267,10 @@ function App() {
                 </div>
               </div>
             </div>
+
+
+
+
 
             {/* FORMULARIO DE CONTACTO */}
             <form style={{
@@ -890,6 +1428,18 @@ function App() {
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* Enhanced CURRICULUM */}
       <section id="curriculum" style={{
@@ -1064,7 +1614,19 @@ function App() {
         </div>
       </footer>
     </div>
+
   );
+
+
+
+
+
+
+
+
+
+
+  
 }
 
 export default App;
