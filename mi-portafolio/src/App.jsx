@@ -11,7 +11,7 @@ function App() {
       const scrollPosition = window.scrollY;
       setScrolled(scrollPosition > 50);
 
-      const sections = ['home', 'portafolio', 'acerca',  'habilidades',
+      const sections = ['home', 'proyecto', 'acerca',  'habilidades',
         'testimonios','contacto', 'curriculum',];
       const scrollPos = scrollPosition + 60;
 
@@ -97,7 +97,7 @@ function App() {
           <div style={{ display: isMobile ? 'none' : 'flex', gap: 12 }}>
             {[
               { id: 'home', label: 'Inicio' },
-              { id: 'portafolio', label: 'Portafolio' },
+              { id: 'proyecto', label: 'Proyectos' },
               { id: 'acerca', label: 'Sobre mí' },
                { id: 'habilidades', label: 'Habilidades' },
               { id: 'testimonios', label: 'Testimonios' },
@@ -163,9 +163,11 @@ function App() {
           }}>
             {[
               { id: 'home', label: 'Inicio' },
-              { id: 'portafolio', label: 'Portafolio' },
+              { id: 'proyecto', label: 'Proyectos' },
               { id: 'acerca', label: 'Sobre mí' },
-              { id: 'contacto', label: 'Contacto' },
+               { id: 'habilidades', label: 'Habilidades' },
+              { id: 'testimonios', label: 'Testimonios' },
+               { id: 'contacto', label: 'Contacto' },
               { id: 'curriculum', label: 'CV' }
             ].map(item => (
               <button
@@ -316,7 +318,7 @@ function App() {
       marginBottom: 20,
       opacity: 0.9
     }}>
-      Frontend Developer & AI Enthusiast
+      Frontend Developer
     </h2>
     <p style={{
       fontSize: 20,
@@ -325,11 +327,11 @@ function App() {
       opacity: 0.8,
       lineHeight: 1.6
     }}>
-      Desarrolladora especializada en crear experiencias digitales innovadoras y soluciones de inteligencia artificial.
+      Desarrolladora especializada en crear experiencias digitales innovadoras y soluciones tecnologías.
     </p>
     <div style={{ display: 'flex', gap: 15, flexWrap: 'wrap' }}>
       <button
-        onClick={() => scrollToSection('portafolio')}
+        onClick={() => scrollToSection('proyecto')}
         style={{
           background: 'rgba(255,255,255,0.2)',
           color: '#fff',
@@ -413,7 +415,7 @@ function App() {
       </section>
 
       {/* Enhanced PORTFOLIO */}
-      <section id="portafolio" style={{ padding: '80px 20px', background: '#fff' }}>
+      <section id="proyecto" style={{ padding: '80px 20px', background: '#fff' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{
             fontSize: 42,
@@ -424,10 +426,10 @@ function App() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            Portafolio
+            Proyectos
           </h2>
           <p style={{ color: '#666', marginBottom: 50, fontSize: 18 }}>
-            Proyectos destacados en desarrollo Frontend e Inteligencia Artificial
+            Este es el primero de muchos proyectos que compartiré aquí.
           </p>
           <div style={{
             display: 'grid',
@@ -561,10 +563,7 @@ function App() {
               <h3 style={{ fontWeight: 700, fontSize: 24, marginBottom: 15, color: '#333' }}>
                 Proyectos de IA
               </h3>
-              <p style={{ color: '#666', fontSize: 16, marginBottom: 20, lineHeight: 1.6 }}>
-                Investigación y desarrollo en inteligencia artificial, machine learning y ciencia de datos.
-                Soluciones innovadoras para problemas complejos.
-              </p>
+           
               <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -700,7 +699,7 @@ function App() {
                 🚀 Mi Trayectoria
               </div>
               <div style={{ color: '#667eea', fontWeight: 600, fontSize: 16 }}>
-                2+ Proyectos • 1+ Año • 100% Pasión
+                1 Proyecto • 1- Año • 100% Pasión
               </div>
             </div>
           </div>
@@ -723,7 +722,7 @@ function App() {
             Habilidades & Tecnologías
           </h2>
           <p style={{ color: '#666', marginBottom: 50, fontSize: 18 }}>
-            Tecnologías y herramientas que domino para crear experiencias excepcionales
+            Tecnologías y herramientas que he tenido experiencias excepcionales
           </p>
 
           <div style={{
@@ -758,7 +757,7 @@ function App() {
                 Frontend Development
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                {['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Sass', 'Tailwind CSS', 'Bootstrap'].map(tech => (
+                {['React', 'JavaScript', 'HTML5', 'CSS3',  'Tailwind CSS'].map(tech => (
                   <span key={tech} style={{
                     background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
                     color: '#667eea',
@@ -801,7 +800,7 @@ function App() {
                 IA & Data Science
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                {['Python', 'TensorFlow', 'PyTorch', 'Pandas', 'NumPy', 'Scikit-learn', 'Jupyter', 'Machine Learning'].map(tech => (
+                {['Python', 'Jupyter', 'Machine Learning'].map(tech => (
                   <span key={tech} style={{
                     background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1))',
                     color: '#a855f7',
@@ -844,7 +843,7 @@ function App() {
                 Herramientas & Otros
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                {['Git', 'GitHub', 'VS Code', 'Figma', 'Node.js', 'SQL', 'MongoDB', 'Agile/Scrum'].map(tech => (
+                {['Git', 'GitHub', 'VS Code', 'Figma', 'Node.js', 'SQL', 'Agile/Scrum'].map(tech => (
                   <span key={tech} style={{
                     background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1))',
                     color: '#06b6d4',
@@ -933,6 +932,7 @@ function App() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: 30
           }}>
+            
             {/* Testimonio 1 */}
             <div style={{
               background: '#fff',
@@ -968,7 +968,7 @@ function App() {
                 marginBottom: 25,
                 fontStyle: 'italic'
               }}>
-                "Niurka demuestra una capacidad excepcional para resolver problemas complejos. Su enfoque innovador y atención al detalle hacen que cada proyecto sea un éxito. Es una profesional altamente recomendable."
+                
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
                 <div style={{
@@ -986,10 +986,10 @@ function App() {
                 </div>
                 <div style={{ textAlign: 'left' }}>
                   <div style={{ fontWeight: 700, color: '#333', fontSize: 16 }}>
-                    Carlos Mendoza
+                    Ans
                   </div>
                   <div style={{ color: '#667eea', fontSize: 14, fontWeight: 600 }}>
-                    Tech Lead - StartupTech
+                    Tech
                   </div>
                 </div>
               </div>
@@ -1030,7 +1030,7 @@ function App() {
                 marginBottom: 25,
                 fontStyle: 'italic'
               }}>
-                "Trabajar con Niurka fue una experiencia increíble. Su creatividad y habilidades técnicas son impresionantes. Siempre entrega resultados que superan las expectativas del cliente."
+                
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
                 <div style={{
@@ -1048,10 +1048,10 @@ function App() {
                 </div>
                 <div style={{ textAlign: 'left' }}>
                   <div style={{ fontWeight: 700, color: '#333', fontSize: 16 }}>
-                    María González
+                    
                   </div>
                   <div style={{ color: '#a855f7', fontSize: 14, fontWeight: 600 }}>
-                    UX Designer - DesignStudio
+                    
                   </div>
                 </div>
               </div>
@@ -1092,8 +1092,8 @@ function App() {
                 marginBottom: 25,
                 fontStyle: 'italic'
               }}>
-                "La dedicación y profesionalismo de Niurka son ejemplares. Su capacidad para adaptarse a nuevas tecnologías y su enfoque en la calidad hacen que sea una colaboradora excepcional."
-              </p>
+                
+                              </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 15 }}>
                 <div style={{
                   width: 50,
@@ -1110,10 +1110,10 @@ function App() {
                 </div>
                 <div style={{ textAlign: 'left' }}>
                   <div style={{ fontWeight: 700, color: '#333', fontSize: 16 }}>
-                    Dr. Roberto Silva
+                    
                   </div>
                   <div style={{ color: '#06b6d4', fontSize: 14, fontWeight: 600 }}>
-                    Professor - Universidad Técnica
+                    
                   </div>
                 </div>
               </div>
@@ -1133,7 +1133,7 @@ function App() {
               ¿Trabajaste conmigo?
             </h3>
             <p style={{ color: '#666', marginBottom: 20 }}>
-              Me encantaría incluir tu testimonio
+              Estoy construyendo esta sección. Si hemos colaborado en un proyecto, ¡me encantaría incluir tu testimonio!
             </p>
             <button
               onClick={() => scrollToSection('contacto')}
